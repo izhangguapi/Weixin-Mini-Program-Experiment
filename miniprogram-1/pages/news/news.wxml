@@ -1,0 +1,75 @@
+<!--pages/news/news.wxml-->
+<view class="news">
+    <view class="new-box" wx:if="{{flag}}">
+        <view> {{ msg }} </view>
+        <view class="mg20">
+            <input type="text" placeholder="请输入" model:value="{{msg}}" />
+        </view>
+        <view class="mg20">
+            <input type="text" placeholder="请输入" value="{{msg}}"   bindinput="getnewmsg"   />
+        </view>
+        <view bindtap="changecount" >
+            count == {{count }}
+        </view>
+        <view class="swiper">
+            <swiper indicator-dots="{{true}}"  autoplay="{{true}}"  circular="{{true}}">
+                <swiper-item wx:for="{{films}}" wx:key="index">
+                    <image src="{{item.poster}}" ></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view>
+            <button type="primary" class="mg20" bindtap="getcitylist">获取城市列表</button>
+        </view>
+        <view class="city">
+            <view class="city-item" wx:for="{{cities}}" wx:key="index">
+                {{item.name}} 
+            </view>
+        </view> 
+        <view>
+            <audio 
+                poster="{{poster}}" 
+                name="{{name}}" 
+                author="{{author}}" 
+                src="{{src}}" 
+                id="myAudio" 
+                controls 
+                loop>
+            </audio>      
+            <button type="primary"  class="mg20" bindtap="audioPlay">播放</button>
+            <button type="primary"   class="mg20" bindtap="audioPause">暂停</button>    
+        </view>
+        <view class="video-box">
+            <video 
+                id="myVideo" 
+                src="{{vSrc}}"
+                danmu-list="{{danmuList}}"  
+                enable-danmu
+                danmu-btn 
+                show-center-play-btn='{{false}}' 
+                show-play-btn="{{true}}" 
+                controls
+                bindplay="videoplay"
+            > </video>
+            <view class="vlist">
+                <input type="text" placeholder="请输入弹幕"  model:value="{{text}}"  /> 
+                <viwe class="sendbtn" bindtap="sendDanmu">发送</viwe> 
+            </view>
+            <view>
+                <button type="primary" class="mg20" bindtap="changeVsrc">更换视频</button>
+            </view>
+        </view>
+    </view>
+    <view wx:else class="precess">
+        <progress 
+            class="process-box"
+            border-radius="10" 
+            duration ="10" 
+            percent="100"   
+            active-color="#f50"    
+            active stroke-width="13" 
+            show-info     
+            bindactiveend = "loadactionendd" 
+        />  
+    </view>
+</view>

@@ -1,0 +1,46 @@
+/* pages/news/news.wxss */
+.news{
+    width:100%;
+    height:100%;
+}
+.precess{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.process-box{
+    width:100%;
+    padding:20rpx;
+}
+.city{
+    width:100%;
+    padding:20rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+.city-item{
+    margin:10rpx;
+    padding:10rpx;
+    background: rgba(0,0,0,0.5);
+    color:#123456;
+    border-radius: 10rpx;
+}
+
+.vlist{
+    display: flex;
+    justify-content: space-between;
+    padding:20rpx;
+}
+.sendbtn{
+    width:100rpx;
+    flex-shrink: 0;
+    background-color: darkcyan;
+    padding:20rpx;
+    font-size: 26rpx;
+    border-radius: 10rpx;
+    color:#fff;
+    text-align: center;
+    margin-left: 20rpx;
+}

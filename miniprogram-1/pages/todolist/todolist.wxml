@@ -1,0 +1,48 @@
+<!--pages/todolist/todolist.wxml-->
+<view class="todo">
+    <view class="title">
+        武汉设计工程学院 - 留言板 
+    </view>
+    <view class="form">
+        <view class="form-col">
+            <view class="form-label">
+                标题 : 
+            </view>
+            <view class="form-input">
+                <input class="input" model:value="{{title}}" type="text" placeholder="请输入标题" />
+            </view>
+        </view>
+        <view class="form-col">
+            <view class="form-label">
+                内容 : 
+            </view>
+            <view class="form-input">
+                <input class="input" model:value="{{content}}" type="text" placeholder="请输入内容" />
+            </view>
+        </view>
+        <view class="form-col btn-list">
+            <view class="btn btn-success" bindtap="addcomment">提交留言</view>
+            <view class="btn btn-danger" bindtap="resetData">重置数据</view>
+        </view>
+    </view>
+
+
+    <view class="list" wx:if="{{list.length>0}}">
+        <view class="item" wx:for="{{list}}" wx:key="index" >
+            <view class="col top">
+                <view class="ltitle">{{item.title}} </view>
+                <view class="like" bindtap="dianzanAction" data-index="{{index}}" data-item="{{item}}" >点赞 {{item.like ? item.like : 0 }}</view>
+            </view> 
+            <view class="col">
+                {{item.content}}
+            </view>
+            <view class="col">
+                <view class="cbtn btn-primary" bindtap="updateOne"  data-index="{{index}}" data-item="{{item}}"  >修改</view>
+                <view class="cbtn" bindtap="deleteOne" data-index="{{index}}" data-item="{{item}}">删除</view>
+            </view>
+        </view>
+    </view>
+    <view class="nodata" wx:else>
+        暂无留言数据,请去添加.
+    </view>
+</view>

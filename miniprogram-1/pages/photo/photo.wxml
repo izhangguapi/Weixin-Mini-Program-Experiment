@@ -1,0 +1,35 @@
+<!--pages/photo/photo.wxml-->
+<view class="photo">
+    <view class="txc">
+        多媒体 
+    </view>
+    <button class="mg20" type="primary" bindtap="takephoto">点击拍照</button>
+    <view>
+        <image src="{{pic}}" class="pic "></image>
+    </view>
+    <!-- canvas.wxml -->
+    <canvas style="width: 300px; height: 200px;" canvas-id="firstCanvas"></canvas>
+    
+    <view>
+        <button class="mg20" type="primary" bindtap="showmore">手机硬件操作</button>
+    </view>
+    <view>
+        <view>
+            纬度: {{latitude}}
+        </view>
+        <view>
+            经度: {{longitude}}
+        </view>
+        <view wx:if="{{latitude&&longitude}}">
+            <button  class="mg20" type="primary" bindtap="openwxmap">点击打开微信内置地图</button>
+            <view  >
+                <map 
+                    class="map"
+                    name="武汉设计工程学院"
+                    longitude="{{longitude}}"
+                    latitude="{{latitude}}"
+                ></map>
+            </view>
+        </view>
+    </view>
+</view>

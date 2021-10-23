@@ -1,0 +1,38 @@
+<!--pages/demo/demo.wxml-->
+<view class="demo">
+    <view class="head">武汉设计工程学院-YYDS</view>
+
+    <view class="nav">
+        <view class="nav-item nav-active">衣服</view>
+        <view class="nav-item">电脑</view>
+        <view class="nav-item">汽车</view>
+        <view class="nav-item">房屋</view>
+        <view class="nav-item">商店</view>
+        <view class="nav-item">食品</view>
+    </view>
+
+    <view>
+        <image class="myimg" show-menu-by-longpress="1"  src="{{src}}"></image>
+    </view>
+    <view class="list">
+        <view class="item" wx:for="{{list}}" wx:key="index">
+            <image class="left-img" src="{{item.img}}"></image>
+            <view class="right-box">
+                <view class="title">
+                    {{item.title}}
+                </view>
+                <view class="content">
+                    {{item.content}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="box" wx:if="{{flag}}" >
+        <view> {{ msg }} </view>
+        <view> count --- {{ count }}   </view>
+        <view> word --- {{word}} </view>
+        <button type="primary" bindtap="changeCount"  >点击修改count  </button>
+    </view>
+    <button type="primary" bindtap="changeFlag" >点击切换显示隐藏 </button>
+</view>

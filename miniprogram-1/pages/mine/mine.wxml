@@ -1,0 +1,15 @@
+<!--pages/mine/mine.wxml-->
+<view>
+    <view>
+        Mine  - Mine - 个人中心  -- {{count}}
+    </view>
+    <view>
+        <button bindtap="gotophoto" class="mg20" type="primary">点击进入多媒体</button>
+    </view>
+    <view>
+        <button bindtap="gototodolist" type="primary" class="mg20">进入TodoList</button>
+    </view>
+    <view>
+        <button bindtap="changeCount" type="primary" class="mg20">点击修改count </button>
+    </view>
+</view>

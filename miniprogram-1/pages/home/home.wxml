@@ -1,0 +1,28 @@
+<!--pages/home/home.wxml-->
+<view class="home">
+    <view>
+        HOme - hOme - home  - 主页 
+    </view>
+    <view>
+        <view>
+            hello 武汉设计工程 
+        </view>
+        <text>
+        Are you OK 
+        </text>
+        <view bindtap="changeNum"> num --- {{ num }}</view>
+    </view>
+    <view wx:if="{{flag}}">
+        <image src="{{ iSrc }}"></image>
+        <view wx:for="{{arr}}" wx:key="index">
+            {{item}}  -- {{index}}
+        </view>
+    </view>
+    <button type="primary" bindtap="changeFlag" >点击切换</button>
+    <view bindtap="changeWord">
+        word  --- {{ word   }}
+    </view>
+    <view>
+        <input type="text"  model:value="{{word}}" />
+    </view>
+</view>

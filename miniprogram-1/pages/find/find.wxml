@@ -1,0 +1,39 @@
+<!--pages/find/find.wxml-->
+<view class="find" >
+    <view wx:if="{{false}}">
+        <view> Find - Find - 发现 </view>
+        <view> 武汉设计工程学院 </view>
+    </view>
+    <view class="title">
+      小程序 - 留言板 - TODOList
+    </view>
+    <view class="submit">
+        <view class="sitem">
+            <input type="text" class="sinp" model:value="{{title}}"  placeholder="请输入标题" />
+        </view>
+        <view class="sitem">
+            <input type="text"  class="sinp" model:value="{{content}}" placeholder="请输入内容" />
+        </view>
+        <view>
+            <button  class="sbtn" bindtap="addToList"  >提交留言</button>
+        </view>
+    </view>
+
+    <view class="list">
+        <view wx:if="{{list.length>0}}">  
+            <view class="item" wx:for="{{list}}" wx:key="index">
+                <view> 序号 : {{index+1}}</view>
+                <view class="atitle"> 标题 : {{item.title}}</view>
+                <view class="content"> 内容 : {{item.content}}</view>
+                <view class="alist">
+                    <view class="action del" bindtap="deleteOne" data-index="{{index}}">删除</view>
+                    <view class="action update" bindtap="updateOne" data-item="{{item}}"  data-index="{{index}}" >修改</view>
+                </view>
+            </view>
+        </view>
+        <view wx:else class="nodata">
+            暂无留言数据,请添加...
+        </view>
+    </view>
+
+</view>
