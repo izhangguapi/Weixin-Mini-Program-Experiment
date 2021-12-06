@@ -1,0 +1,94 @@
+/* pages/xinyuan/xinyuan.wxss */
+
+.yuan{
+    width:100%;
+    height:100%;
+    padding:40rpx;
+}
+
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nitem{
+    width:98%;
+    padding:20rpx;
+    box-shadow: 0  0 5rpx #999 ;
+    border-radius: 15rpx;
+    box-sizing: border-box;
+    margin: 10rpx auto 24rpx;
+    box-shadow: inset 5rpx 5rpx 30rpx #d9d9d9,
+            inset -5rpx -5rpx 30rpx #ffffff;
+}
+
+.title{
+    color:#ff00ff;
+    font-size: 30rpx;
+}
+.hot{
+    font-size: 26rpx;
+    color:#777;
+    display: flex;
+    align-items: center;
+}
+.hotimg{
+    width:30rpx;
+    height:30rpx;
+    margin:0 10rpx;
+    
+}
+
+.desc{
+    margin-top:10rpx;
+    color:orange;
+    font-size: 36rpx;
+    padding:10rpx 0 10rpx 0;
+    border-bottom: 1rpx solid #eee;
+}
+
+.col{
+    margin-top:20rpx
+}
+
+.likeimg{
+    width:30rpx;
+    height:30rpx;
+    margin-right:10rpx;
+}
+.like{
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    color:#123456;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    color:deeppink;
+}
+.avatar{
+    width:50rpx;
+    height:50rpx;
+    border-radius: 50%;
+    margin-right:10rpx
+}
+
+.time{
+    font-size: 24rpx;
+    color:#999;
+}
+
+.text{
+    font-size:26rpx;
+    color:#888;
+}
+
+.smtitle{
+    font-size:35rpx;
+    color:#123456;
+}

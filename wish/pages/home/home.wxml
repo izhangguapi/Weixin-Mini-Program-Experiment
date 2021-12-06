@@ -1,0 +1,62 @@
+<!--pages/home/home.wxml-->
+
+<view class="home">
+    <view class="nav">
+        <view bindtap="changeIndex" data-index="1"  class="{{current==1?'nav-item nav-active':'nav-item' }}">最热心愿</view>
+        <view bindtap="changeIndex" data-index="2" class="{{current==2?'nav-item nav-active':'nav-item' }}">最新心愿</view>
+    </view>
+
+    <view class="home-box">
+        <scroll-view
+        lower-threshold="50"
+        scroll-y
+        bindscrolltolower="loadmore"
+        class="scroll">
+            <navigator class="nitem" url="{{'../xinyuan/xinyuan?_id='+item._id}}"  wx:for="{{list}}" wx:key="index">
+                <view class="flex">
+                    <view class="title">
+                        {{item.title}}
+                    </view>
+                    <view class="hot">
+                        <text>人气</text> <image class="hotimg" src="../../images/hot.png"></image>    {{item.hot}}
+                    </view>
+                </view>
+                <view class="desc">
+                    {{item.desc}}
+                </view>
+                <view class="flex col">
+                    <view class="like">
+                        <image class="likeimg" src="../../images/like.png"> </image>
+                        {{item.like}}
+                    </view>
+                    <view class="like">
+                        <image class="likeimg" src="../../images/collect.png"> </image>
+                         {{item.shou}}
+                    </view>
+                </view>
+                <view class="flex col">
+                    <view class="text">
+                         {{item.type}}
+                    </view>
+                    <view class="text">
+                         {{item.level}}
+                    </view>
+                </view>
+                <view class="flex col">
+                    <view class="info" wx:if="{{item.open==1}}">
+                        <image class="avatar" src="{{item.avatarUrl}}"> </image>
+                        {{item.author}}
+                    </view>
+                    <view wx:else class="info">
+                        <image class="avatar" src="../../images/user.png"> </image>
+                        <text style="color:#999">匿名心愿</text>
+                    </view>
+                    <view class="time   ">
+                       {{item.time}}
+                    </view>
+                </view>
+            </navigator>
+        </scroll-view>
+    </view>
+</view>
+

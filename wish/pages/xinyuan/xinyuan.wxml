@@ -1,0 +1,68 @@
+<!--pages/xinyuan/xinyuan.wxml-->
+<view class="yuan">
+    <view class="nitem" >
+        <view class="flex">
+            <view class="title" bindtap="addPingLun">
+               评论 ({{xlist.length}})
+            </view>
+            <view class="hot">
+                <text>人气</text> <image class="hotimg" src="../../images/hot.png"></image>    {{obj.hot}}
+            </view>
+        </view>
+        <view class="desc">
+            {{obj.desc}}
+        </view>
+        <view class="flex col">
+            <view class="like" bindtap="dianzanAction">
+                <image class="likeimg" src="../../images/like.png"> </image>
+                {{obj.like}}
+            </view>
+            <view class="like" bindtap="shoucangaction">
+                <image class="likeimg" src="../../images/collect.png"> </image>
+                    {{obj.shou}}
+            </view>
+        </view>
+        <view class="flex col">
+            <view class="text">
+                    {{obj.type}}
+            </view>
+            <view class="text">
+                    {{obj.level}}
+            </view>
+        </view>
+        <view class="flex col">
+            <view class="info" wx:if="{{obj.open==1}}">
+                <image class="avatar" src="{{obj.avatarUrl}}"> </image>
+                {{obj.author}}
+            </view>
+            <view wx:else class="info">
+                <image class="avatar" src="../../images/user.png"> </image>
+                <text style="color:#999">匿名心愿</text>
+            </view>
+            <view class="time   ">
+                {{obj.time}}
+            </view>
+        </view>
+    </view>
+
+    <view class="plist">
+        <view class="smtitle">当前心愿的评论:</view>
+        <view class="nitem" wx:for="{{xlist}}" wx:key="index">
+            <view class="flex col">
+                <view class="info" >
+                    <image class="avatar" src="{{obj.avatarUrl}}"> </image>
+                    {{item.nickName}}
+                </view>
+
+                <view class="time   ">
+                    {{item.time}}
+                </view>
+            </view>
+            <view class="desc">
+                {{item.content}}
+            </view>
+        </view>
+       
+    </view>
+   
+</view>

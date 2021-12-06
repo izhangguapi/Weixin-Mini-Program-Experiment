@@ -1,0 +1,47 @@
+<!--pages/mylike/mylike.wxml-->
+<view class="mylike">
+    <view class="nitem"  wx:for="{{list}}" wx:key="index">
+        <view class="flex">
+            <view class="title">
+                {{item.title}}
+            </view>
+            <view class="hot">
+                <text>人气</text> <image class="hotimg" src="../../images/hot.png"></image>    {{item.hot}}
+            </view>
+        </view>
+        <view class="desc">
+            {{item.desc}}
+        </view>
+        <view class="flex col">
+            <view class="like">
+                <image class="likeimg" src="../../images/like.png"> </image>
+                {{item.like}}
+            </view>
+            <view class="like">
+                <image class="likeimg" src="../../images/collect.png"> </image>
+                {{item.shou}}
+            </view>
+        </view>
+        <view class="flex col">
+            <view class="text">
+                {{item.type}}
+            </view>
+            <view class="text">
+                {{item.level}}
+            </view>
+        </view>
+        <view class="flex col">
+            <view class="info" wx:if="{{item.open==1}}">
+                <image class="avatar" src="{{item.avatarUrl}}"> </image>
+                {{item.author}}
+            </view>
+            <view wx:else class="info">
+                <image class="avatar" src="../../images/user.png"> </image>
+                <text style="color:#999">匿名心愿</text>
+            </view>
+            <view class="time   ">
+            {{item.time}}
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,57 @@
+<!--pages/mine/mine.wxml-->
+
+
+<view class="mine">
+    <view class="box" wx:if="{{userInfo}}">
+        <view class="top">
+            <view class="img">
+                <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+            </view>
+            <view class="title">
+                昵称 :<text class="nickname"> {{userInfo.nickName}} </text>
+            </view>
+        </view>
+        <view class="list">
+            <view class="row">
+                <view class="col left">
+                    我的愿望
+                </view>
+                <view class="col right">
+                    10(个)
+                </view>
+            </view>
+            <view class="row" bindtap="gotolike">
+                <view class="col left">
+                    我的点赞
+                </view>
+                <view class="col right">
+                    5(个)
+                </view>
+            </view>
+            <view class="row" bindtap="gotoshou">
+                <view class="col left">
+                    我的收藏
+                </view>
+                <view class="col right">
+                    1(个)
+                </view>
+            </view>
+            <view class="row">
+                <view class="col left">
+                    我的评论
+                </view>
+                <view class="col right">
+                    8(个)
+                </view>
+            </view>
+            
+        </view>
+        <view class="logout" bindtap="logoutaction" >退出登录</view>
+    </view>
+    <view class="nologin" wx:else>
+        <view class="startlogin" bindtap="authLogin" >
+            <view>授权</view>
+            <view>登录</view>
+        </view>
+    </view>
+</view>

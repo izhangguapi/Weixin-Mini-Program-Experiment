@@ -1,0 +1,26 @@
+/**
+ 小程序项目的公共的CSS
+**/
+
+view{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+input{
+    border:1rpx solid #eee;
+    width:90%;
+    padding:14rpx 20rpx;
+    border-radius: 10rpx;
+    color:#999;
+    font-size: 36rpx;
+}
+
+.mg20{
+    margin: 20rpx;
+}
+
+.txc{
+    text-align: center;
+}

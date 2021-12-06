@@ -1,0 +1,54 @@
+<!--pages/submit/submit.wxml-->
+<view class="submit"> 
+    <view class="title">开始许愿吧 </view>
+    <view class="form">
+        <view class="form-col">
+            <view class="form-label">
+                心愿标题:
+            </view>
+            <view class="form-input">
+                <input type="text" model:value="{{title}}" class="input" placeholder="请输入心愿标题"   />
+            </view>
+        </view>
+        <view class="form-col">
+            <view class="form-label">
+                心愿描述:
+            </view>
+            <view class="form-input">
+                <textarea type="text" model:value="{{desc}}" class="input" placeholder="请输入心愿描述"   ></textarea>
+            </view>
+        </view>
+        <view class="form-col">
+            <view class="form-label">
+                心愿分类:
+            </view>
+            <view class="form-input">
+                <input type="text" model:value="{{type}}"   bindtap="showList" disabled class="input" placeholder="请选择"   />
+            </view>
+        </view>
+        <view class="form-col">
+            <view class="form-label">
+                心愿难度:
+            </view>
+            <view class="form-input">
+                <input type="text" model:value="{{level}}"   bindtap="showLevels" disabled class="input" placeholder="请选择"   />
+            </view>
+        </view>
+        <view class="form-col">
+            <view class="form-label">
+                是否公开:
+            </view>
+            <view class="form-input">
+                <radio-group bindchange="radioChange">
+                    <label class="radio">
+                        <radio value="1" />公开
+                    </label>
+                    <label class="radio">
+                        <radio value="0" checked="true" />匿名  
+                    </label>
+                </radio-group>
+            </view>
+        </view>
+    </view>
+    <view class="form-btn" bindtap="startWish" >许愿吧</view>
+</view>
